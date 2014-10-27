@@ -34,7 +34,7 @@ class: center, middle
 ```ruby
 module Sizable
   def big?
-    length > 10 ? 'big' : 'small'
+    length > 10
   end
 end
 
@@ -218,14 +218,14 @@ enum.map(&:to_s) # => ['1', '2', '3']
 # Enumerator
 ```ruby
 enum = Enumerator.new do |y|
-  a = 2
+  a = 1
   loop do
     y << a
     a *= 2
   end
 end
 
-enum.take(5)
+enum.take(5) # => [1, 2, 4, 8, 16]
 ```
 ---
 # Enumerator::Lazy
